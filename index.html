@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T20 World Cup Analytics</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase Modular SDK Import Map -->
+    <script type="importmap">
+    {
+        "imports": {
+            "firebase/app": "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js",
+            "firebase/firestore": "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js",
+            "firebase/analytics": "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <div id="app" class="app-container">
+        <!-- Navigation -->
+        <nav class="glass-nav">
+            <div class="nav-content">
+                <div class="logo">
+                    <i data-lucide="trophy"></i>
+                    <span>T20 <strong>Analytics</strong></span>
+                </div>
+                <div class="nav-links">
+                    <button class="nav-link active" data-tab="live">Live Scores</button>
+                    <button class="nav-link" data-tab="scoreboards">Scoreboards</button>
+                    <button class="nav-link" data-tab="ball-by-ball">Ball By Ball</button>
+                    <button class="nav-link" data-tab="live-stats">Live 2026 Stats</button>
+                    <button class="nav-link" data-tab="analytics">Match Analytics</button>
+                    <button class="nav-link" data-tab="tournament-analytics">Tournament Analytics</button>
+                    <button class="nav-link" data-tab="points-table">Points Table</button>
+                    <button id="init-db-btn" class="nav-link"
+                        style="background: var(--accent-danger); color: white;">Init DB</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main id="main-content" class="main-content">
+            <!-- Dynamic Content Injected Here -->
+        </main>
+    </div>
+
+    <!-- Migration Utility (Temporary) -->
+    <script type="module" src="populate-firestore.js"></script>
+
+    <!-- App Logic -->
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
